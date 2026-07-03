@@ -503,15 +503,13 @@ export const AppView = (props: {
           return response;
         },
         refreshAnnotationData: refetchAnnotationsData
-      }}
-    >
+      }}>
       <Layout
         mode={fullScreen ? 'expanding-second' : minimizedTable ? 'first-minimal' : 'half'}
         firstItem={
           <div className="w-full h-full flex flex-col">
             <div
-              className={`w-full ${fullScreen ? 'h-full' : props.orientation === 'stacked_vertical' ? 'h-full' : 'h-1/2'}`}
-            >
+              className={`w-full ${fullScreen ? 'h-full' : props.orientation === 'stacked_vertical' ? 'h-full' : 'h-1/2'}`}>
               <ApplicationTable
                 steps={stepsSorted}
                 appID={appID}
@@ -542,7 +540,7 @@ export const AppView = (props: {
                   stateMachine={data.application}
                   currentAction={currentStep}
                   // highlightedActions={previousActions}
-                  highlightedActions={[]}
+                  highlightedActions={undefined}
                   hoverAction={hoverAction}
                 />
               </div>
@@ -555,7 +553,7 @@ export const AppView = (props: {
             stateMachine={currentFocusStepsData?.application || data.application}
             // stateMachine={data.application}
             // highlightedActions={previousActions}
-            highlightedActions={[]}
+            highlightedActions={undefined}
             hoverAction={hoverAction}
             currentActionLocation={currentSequenceLocation}
             displayGraphAsTab={displayGraphAsTabs} // in this case we want the graph as a tab
