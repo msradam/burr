@@ -503,13 +503,15 @@ export const AppView = (props: {
           return response;
         },
         refreshAnnotationData: refetchAnnotationsData
-      }}>
+      }}
+    >
       <Layout
         mode={fullScreen ? 'expanding-second' : minimizedTable ? 'first-minimal' : 'half'}
         firstItem={
           <div className="w-full h-full flex flex-col">
             <div
-              className={`w-full ${fullScreen ? 'h-full' : props.orientation === 'stacked_vertical' ? 'h-full' : 'h-1/2'}`}>
+              className={`w-full ${fullScreen ? 'h-full' : props.orientation === 'stacked_vertical' ? 'h-full' : 'h-1/2'}`}
+            >
               <ApplicationTable
                 steps={stepsSorted}
                 appID={appID}
